@@ -7,6 +7,12 @@
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
+	<properties>
+ 		 <sonar.projectKey>cndacademy_hello-world-war</sonar.projectKey>
+ 		 <sonar.organization>cndacademy</sonar.organization>
+ 		 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+ 		 <sonar.login>0829daee34fb2c86607d80c7cf0621f537bdc19c</sonar.login>
+	</properties>
 
 	<build>
 		<plugins>
