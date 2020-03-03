@@ -32,8 +32,8 @@ node(){
     }
 	stage('Publish Artifcts: Nexus'){
 	    echo "Publishing Artifacts to Nexus"
-	    nexusPublisher nexusInstanceId: 'nexus-server-3', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-app.war']], mavenCoordinate: [artifactId: 'hello-world-war', groupId: 'com.efsavage', packaging: 'war', version: ${Artfact_Version}]]]
-	   
+	    //nexusPublisher nexusInstanceId: 'nexus-server-3', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-app.war']], mavenCoordinate: [artifactId: 'hello-world-war', groupId: 'com.efsavage', packaging: 'war', version: ${Artfact_Version}]]]
+	   nexusPublisher nexusInstanceId: 'nexus-server-3', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-app.war']], mavenCoordinate: [artifactId: 'POM_ARTIFACTID', groupId: 'POM_GROUPID', packaging: 'POM_PACKAGING', version: 'POM_VERSION']]]
 	 }
 	stage('Deploy Dev'){
 	  echo "Deploy to Dev Server"
