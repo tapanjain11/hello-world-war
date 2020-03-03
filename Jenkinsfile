@@ -1,4 +1,4 @@
-
+def Artfact_Version = 1.5
 node(){
     try{
     stage('Checkout'){
@@ -32,7 +32,7 @@ node(){
     }
 	stage('Publish Artifcts: Nexus'){
 	    echo "Publishing Artifacts to Nexus"
-	    nexusPublisher nexusInstanceId: 'nexus-server-3', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-app.war']], mavenCoordinate: [artifactId: 'hello-world-war', groupId: 'com.efsavage', packaging: 'war', version: '1.2']]]
+	    nexusPublisher nexusInstanceId: 'nexus-server-3', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-app.war']], mavenCoordinate: [artifactId: 'hello-world-war', groupId: 'com.efsavage', packaging: 'war', version: '${Artfact_Version}']]]
 	   
 	 }
 	stage('Deploy Dev'){
