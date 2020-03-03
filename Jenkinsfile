@@ -1,6 +1,6 @@
-def Artfact_Version = 1.5
 node(){
     try{
+    def Artfact_Version = 1.5	    
     stage('Checkout'){
         echo "Checkout stage"
         git url:"https://github.com/cndacademy/hello-world-war.git"
